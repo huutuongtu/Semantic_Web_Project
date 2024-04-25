@@ -109,6 +109,9 @@
         <ObjectProperty IRI="#isPublisherOf"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#hasDescription"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#hasExtension"/>
     </Declaration>
     <Declaration>
@@ -267,9 +270,17 @@
         <Class IRI="#Book"/>
     </ObjectPropertyRange>
     <SubDataPropertyOf>
+        <DataProperty IRI="#hasDescription"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
         <DataProperty IRI="#hasTitle"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDescription"/>
+        <Class IRI="#Book"/>
+    </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasExtension"/>
         <Class IRI="#Book"/>
@@ -311,6 +322,10 @@
         <Class IRI="#Publisher"/>
     </DataPropertyDomain>
     <DataPropertyRange>
+        <DataProperty IRI="#hasDescription"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="#hasExtension"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
@@ -350,7 +365,6 @@
         <DataProperty IRI="#publisherHasName"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
-    
 </Ontology>
 
 

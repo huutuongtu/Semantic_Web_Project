@@ -90,6 +90,7 @@ for i in range(len(data)):
     bookRate = data['hasRate'][i]
     bookTags = data['hasTags'][i]
     bookCategory = data['hasCategory'][i].split(",")
+    bookDescription = data['hasDescription'][i]
     
     #create individual
     book_str = """
@@ -169,7 +170,13 @@ for i in range(len(data)):
         <NamedIndividual IRI="#%s"/>
         <Literal datatypeIRI="&xsd;string">%s</Literal>
     </DataPropertyAssertion>
-        """ % (bookIndividual, bookAuthor, bookIndividual, bookLanguage, bookIndividual, bookPublisher, bookIndividual, bookExtension, bookIndividual, bookId, bookIndividual, bookNumberPage, bookIndividual, bookPublicYear, bookIndividual, bookSize, bookIndividual, bookTitle, bookIndividual, bookTags)
+
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasTag"/>
+        <NamedIndividual IRI="#%s"/>
+        <Literal datatypeIRI="&xsd;string">%s</Literal>
+    </DataPropertyAssertion>
+        """ % (bookIndividual, bookAuthor, bookIndividual, bookLanguage, bookIndividual, bookPublisher, bookIndividual, bookExtension, bookIndividual, bookId, bookIndividual, bookNumberPage, bookIndividual, bookPublicYear, bookIndividual, bookSize, bookIndividual, bookTitle, bookIndividual, bookTags, bookIndividual, bookDescription)
     book_str += book_str_2
     _book_to_append += book_str
 

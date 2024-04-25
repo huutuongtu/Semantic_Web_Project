@@ -69,3 +69,5 @@ query = """
 """
 
 print(list(default_world.sparql(base_query + query)))
+
+ 

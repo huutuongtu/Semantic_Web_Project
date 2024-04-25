@@ -109,6 +109,9 @@
         <ObjectProperty IRI="#isPublisherOf"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#hasDescription"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#hasExtension"/>
     </Declaration>
     <Declaration>
@@ -145,7 +148,7 @@
         <NamedIndividual IRI="#Vietnamese"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#chuatecuanhungchiennhan"/>
+        <NamedIndividual IRI="#chuatecuanhungchiecnhan"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#j.j.r.tolkien"/>
@@ -261,7 +264,7 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Book"/>
-        <NamedIndividual IRI="#chuatecuanhungchiennhan"/>
+        <NamedIndividual IRI="#chuatecuanhungchiecnhan"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Author"/>
@@ -297,17 +300,17 @@
     </ClassAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasAuthor"/>
-        <NamedIndividual IRI="#chuatecuanhungchiennhan"/>
+        <NamedIndividual IRI="#chuatecuanhungchiecnhan"/>
         <NamedIndividual IRI="#j.j.r.tolkien"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasLanguage"/>
-        <NamedIndividual IRI="#chuatecuanhungchiennhan"/>
+        <NamedIndividual IRI="#chuatecuanhungchiecnhan"/>
         <NamedIndividual IRI="#English"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasPublisher"/>
-        <NamedIndividual IRI="#chuatecuanhungchiennhan"/>
+        <NamedIndividual IRI="#chuatecuanhungchiecnhan"/>
         <NamedIndividual IRI="#nhanam"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
@@ -358,7 +361,7 @@
     <DataPropertyAssertion>
         <DataProperty IRI="#hasName"/>
         <NamedIndividual IRI="#j.j.r.tolkien"/>
-        <Literal datatypeIRI="&rdf;PlainLiteral">J J R Tolkien</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Tolkien</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#publisherHasName"/>
@@ -408,6 +411,11 @@
     <DataPropertyAssertion>
         <DataProperty IRI="#hasTag"/>
         <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
+        <Literal datatypeIRI="&xsd;string">This is a stupid book</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasTag"/>
+        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
         <Literal datatypeIRI="&xsd;string">Top 100 books</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
@@ -439,6 +447,11 @@
         <DataProperty IRI="#hasSize"/>
         <NamedIndividual IRI="#trangtest"/>
         <Literal datatypeIRI="&xsd;string">20MB</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasTag"/>
+        <NamedIndividual IRI="#trangtest"/>
+        <Literal datatypeIRI="&xsd;string">This book is good</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#hasTag"/>
@@ -479,6 +492,11 @@
         <DataProperty IRI="#hasTag"/>
         <NamedIndividual IRI="#trangti"/>
         <Literal datatypeIRI="&xsd;string">Top 100 books</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasTag"/>
+        <NamedIndividual IRI="#trangti"/>
+        <Literal datatypeIRI="&xsd;string">This book is stupid</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#hasTitle"/>
@@ -534,9 +552,17 @@
         <Class IRI="#Book"/>
     </ObjectPropertyRange>
     <SubDataPropertyOf>
+        <DataProperty IRI="#hasDescription"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
         <DataProperty IRI="#hasTitle"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDescription"/>
+        <Class IRI="#Book"/>
+    </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasExtension"/>
         <Class IRI="#Book"/>
@@ -577,6 +603,10 @@
         <DataProperty IRI="#publisherHasName"/>
         <Class IRI="#Publisher"/>
     </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDescription"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasExtension"/>
         <Datatype abbreviatedIRI="xsd:string"/>

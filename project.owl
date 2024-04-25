@@ -109,6 +109,9 @@
         <ObjectProperty IRI="#isPublisherOf"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#hasDescription"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#hasExtension"/>
     </Declaration>
     <Declaration>
@@ -137,24 +140,6 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#publisherHasName"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#English"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#KimDong"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#NguyenNhatAnh"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#TESTBOOK"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#ToiThayHoaVangTrenCoXanh"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Vietnamese"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#Algebra"/>
@@ -236,99 +221,6 @@
         <Class IRI="#Therapy"/>
         <Class IRI="#Medicine"/>
     </SubClassOf>
-    <ClassAssertion>
-        <Class IRI="#Language"/>
-        <NamedIndividual IRI="#English"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Publisher"/>
-        <NamedIndividual IRI="#KimDong"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Author"/>
-        <NamedIndividual IRI="#NguyenNhatAnh"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Children"/>
-        <NamedIndividual IRI="#TESTBOOK"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Fantasy"/>
-        <NamedIndividual IRI="#TESTBOOK"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Children"/>
-        <NamedIndividual IRI="#ToiThayHoaVangTrenCoXanh"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Language"/>
-        <NamedIndividual IRI="#Vietnamese"/>
-    </ClassAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasAuthor"/>
-        <NamedIndividual IRI="#ToiThayHoaVangTrenCoXanh"/>
-        <NamedIndividual IRI="#NguyenNhatAnh"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasLanguage"/>
-        <NamedIndividual IRI="#ToiThayHoaVangTrenCoXanh"/>
-        <NamedIndividual IRI="#Vietnamese"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasPublisher"/>
-        <NamedIndividual IRI="#ToiThayHoaVangTrenCoXanh"/>
-        <NamedIndividual IRI="#KimDong"/>
-    </ObjectPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#publisherHasName"/>
-        <NamedIndividual IRI="#KimDong"/>
-        <Literal datatypeIRI="&xsd;string">Kim Đồng</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasName"/>
-        <NamedIndividual IRI="#NguyenNhatAnh"/>
-        <Literal datatypeIRI="&xsd;string">Nguyễn Nhật Ánh</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasExtension"/>
-        <NamedIndividual IRI="#ToiThayHoaVangTrenCoXanh"/>
-        <Literal datatypeIRI="&xsd;string">pdf</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasID"/>
-        <NamedIndividual IRI="#ToiThayHoaVangTrenCoXanh"/>
-        <Literal datatypeIRI="&xsd;int">12</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasNumberPage"/>
-        <NamedIndividual IRI="#ToiThayHoaVangTrenCoXanh"/>
-        <Literal datatypeIRI="&xsd;int">300</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasPublishYear"/>
-        <NamedIndividual IRI="#ToiThayHoaVangTrenCoXanh"/>
-        <Literal datatypeIRI="&xsd;int">2015</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasRate"/>
-        <NamedIndividual IRI="#ToiThayHoaVangTrenCoXanh"/>
-        <Literal datatypeIRI="&xsd;float">4.2</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasSize"/>
-        <NamedIndividual IRI="#ToiThayHoaVangTrenCoXanh"/>
-        <Literal datatypeIRI="&xsd;string">30MB</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasTag"/>
-        <NamedIndividual IRI="#ToiThayHoaVangTrenCoXanh"/>
-        <Literal datatypeIRI="&xsd;string">Top 100 book</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasTitle"/>
-        <NamedIndividual IRI="#ToiThayHoaVangTrenCoXanh"/>
-        <Literal datatypeIRI="&xsd;string">Tôi thấy hoa vàng trên cỏ xanh</Literal>
-    </DataPropertyAssertion>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasAuthor"/>
         <ObjectProperty IRI="#isAuthorOf"/>
@@ -378,9 +270,17 @@
         <Class IRI="#Book"/>
     </ObjectPropertyRange>
     <SubDataPropertyOf>
+        <DataProperty IRI="#hasDescription"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
         <DataProperty IRI="#hasTitle"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDescription"/>
+        <Class IRI="#Book"/>
+    </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasExtension"/>
         <Class IRI="#Book"/>
@@ -421,6 +321,10 @@
         <DataProperty IRI="#publisherHasName"/>
         <Class IRI="#Publisher"/>
     </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDescription"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasExtension"/>
         <Datatype abbreviatedIRI="xsd:string"/>
