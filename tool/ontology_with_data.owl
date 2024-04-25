@@ -138,6 +138,39 @@
     <Declaration>
         <DataProperty IRI="#publisherHasName"/>
     </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#English"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Vietnamese"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#chuatecuanhungchiennhan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#j.j.r.tolkien"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#kimdong"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#nguyennhatanh"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#nhanam"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#phangianhatlinh"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#trangtest"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#trangti"/>
+    </Declaration>
     <SubClassOf>
         <Class IRI="#Algebra"/>
         <Class IRI="#Math"/>
@@ -218,6 +251,240 @@
         <Class IRI="#Therapy"/>
         <Class IRI="#Medicine"/>
     </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Language"/>
+        <NamedIndividual IRI="#English"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Language"/>
+        <NamedIndividual IRI="#Vietnamese"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Book"/>
+        <NamedIndividual IRI="#chuatecuanhungchiennhan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Author"/>
+        <NamedIndividual IRI="#j.j.r.tolkien"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Publisher"/>
+        <NamedIndividual IRI="#kimdong"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Author"/>
+        <NamedIndividual IRI="#nguyennhatanh"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Publisher"/>
+        <NamedIndividual IRI="#nhanam"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Author"/>
+        <NamedIndividual IRI="#phangianhatlinh"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Children"/>
+        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fantasy"/>
+        <NamedIndividual IRI="#trangtest"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fantasy"/>
+        <NamedIndividual IRI="#trangti"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAuthor"/>
+        <NamedIndividual IRI="#chuatecuanhungchiennhan"/>
+        <NamedIndividual IRI="#j.j.r.tolkien"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLanguage"/>
+        <NamedIndividual IRI="#chuatecuanhungchiennhan"/>
+        <NamedIndividual IRI="#English"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPublisher"/>
+        <NamedIndividual IRI="#chuatecuanhungchiennhan"/>
+        <NamedIndividual IRI="#nhanam"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAuthor"/>
+        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
+        <NamedIndividual IRI="#nguyennhatanh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLanguage"/>
+        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
+        <NamedIndividual IRI="#Vietnamese"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPublisher"/>
+        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
+        <NamedIndividual IRI="#kimdong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAuthor"/>
+        <NamedIndividual IRI="#trangtest"/>
+        <NamedIndividual IRI="#phangianhatlinh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLanguage"/>
+        <NamedIndividual IRI="#trangtest"/>
+        <NamedIndividual IRI="#English"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPublisher"/>
+        <NamedIndividual IRI="#trangtest"/>
+        <NamedIndividual IRI="#nhanam"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAuthor"/>
+        <NamedIndividual IRI="#trangti"/>
+        <NamedIndividual IRI="#phangianhatlinh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLanguage"/>
+        <NamedIndividual IRI="#trangti"/>
+        <NamedIndividual IRI="#English"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPublisher"/>
+        <NamedIndividual IRI="#trangti"/>
+        <NamedIndividual IRI="#kimdong"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#j.j.r.tolkien"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">J J R Tolkien</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publisherHasName"/>
+        <NamedIndividual IRI="#kimdong"/>
+        <Literal datatypeIRI="&xsd;string">Kim Đồng</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#nguyennhatanh"/>
+        <Literal datatypeIRI="&xsd;string">Nguyễn Nhật Ánh</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publisherHasName"/>
+        <NamedIndividual IRI="#nhanam"/>
+        <Literal datatypeIRI="&xsd;string">Nhã Nam</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#phangianhatlinh"/>
+        <Literal datatypeIRI="&xsd;string">Phan Gia Nhật Linh</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasExtension"/>
+        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">pdf</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasID"/>
+        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
+        <Literal datatypeIRI="&xsd;int">12</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNumberPage"/>
+        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
+        <Literal datatypeIRI="&xsd;int">300</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPublishYear"/>
+        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
+        <Literal datatypeIRI="&xsd;int">2015</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasSize"/>
+        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
+        <Literal datatypeIRI="&xsd;string">30MB</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasTag"/>
+        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
+        <Literal datatypeIRI="&xsd;string">Top 100 books</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasTitle"/>
+        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
+        <Literal datatypeIRI="&xsd;string">Tôi thấy hoa vàng trên cỏ xanh</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasExtension"/>
+        <NamedIndividual IRI="#trangtest"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">pdf</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasID"/>
+        <NamedIndividual IRI="#trangtest"/>
+        <Literal datatypeIRI="&xsd;int">10</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNumberPage"/>
+        <NamedIndividual IRI="#trangtest"/>
+        <Literal datatypeIRI="&xsd;int">250</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPublishYear"/>
+        <NamedIndividual IRI="#trangtest"/>
+        <Literal datatypeIRI="&xsd;int">2020</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasSize"/>
+        <NamedIndividual IRI="#trangtest"/>
+        <Literal datatypeIRI="&xsd;string">20MB</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasTag"/>
+        <NamedIndividual IRI="#trangtest"/>
+        <Literal datatypeIRI="&xsd;string">Top 100 books</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasTitle"/>
+        <NamedIndividual IRI="#trangtest"/>
+        <Literal datatypeIRI="&xsd;string">Trạng Test</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasExtension"/>
+        <NamedIndividual IRI="#trangti"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">pdf</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasID"/>
+        <NamedIndividual IRI="#trangti"/>
+        <Literal datatypeIRI="&xsd;int">11</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNumberPage"/>
+        <NamedIndividual IRI="#trangti"/>
+        <Literal datatypeIRI="&xsd;int">250</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPublishYear"/>
+        <NamedIndividual IRI="#trangti"/>
+        <Literal datatypeIRI="&xsd;int">2020</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasSize"/>
+        <NamedIndividual IRI="#trangti"/>
+        <Literal datatypeIRI="&xsd;string">20MB</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasTag"/>
+        <NamedIndividual IRI="#trangti"/>
+        <Literal datatypeIRI="&xsd;string">Top 100 books</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasTitle"/>
+        <NamedIndividual IRI="#trangti"/>
+        <Literal datatypeIRI="&xsd;string">Trạng Tí</Literal>
+    </DataPropertyAssertion>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasAuthor"/>
         <ObjectProperty IRI="#isAuthorOf"/>
@@ -350,287 +617,7 @@
         <DataProperty IRI="#publisherHasName"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
-    
-
-
-    <Declaration>
-        <NamedIndividual IRI="#nguyennhatanh"/>
-    </Declaration>
-    <ClassAssertion>
-        <Class IRI="#Author"/>
-        <NamedIndividual IRI="#nguyennhatanh"/>
-    </ClassAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasName"/>
-        <NamedIndividual IRI="#nguyennhatanh"/>
-        <Literal datatypeIRI="&xsd;string">Nguyễn Nhật Ánh</Literal>
-    </DataPropertyAssertion>
-        
-    <Declaration>
-        <NamedIndividual IRI="#Vietnamese"/>
-    </Declaration>
-    <ClassAssertion>
-        <Class IRI="#Language"/>
-        <NamedIndividual IRI="#Vietnamese"/>
-    </ClassAssertion>
-        
-    <Declaration>
-        <NamedIndividual IRI="#kimdong"/>
-    </Declaration>
-    <ClassAssertion>
-        <Class IRI="#Publisher"/>
-        <NamedIndividual IRI="#kimdong"/>
-    </ClassAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#publisherHasName"/>
-        <NamedIndividual IRI="#kimdong"/>
-        <Literal datatypeIRI="&xsd;string">Kim Đồng</Literal>
-    </DataPropertyAssertion>
-        
-    <Declaration>
-        <NamedIndividual IRI="#phangianhatlinh"/>
-    </Declaration>
-    <ClassAssertion>
-        <Class IRI="#Author"/>
-        <NamedIndividual IRI="#phangianhatlinh"/>
-    </ClassAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasName"/>
-        <NamedIndividual IRI="#phangianhatlinh"/>
-        <Literal datatypeIRI="&xsd;string">Phan Gia Nhật Linh</Literal>
-    </DataPropertyAssertion>
-        
-    <Declaration>
-        <NamedIndividual IRI="#English"/>
-    </Declaration>
-    <ClassAssertion>
-        <Class IRI="#Language"/>
-        <NamedIndividual IRI="#English"/>
-    </ClassAssertion>
-        
-    <Declaration>
-        <NamedIndividual IRI="#nhanam"/>
-    </Declaration>
-    <ClassAssertion>
-        <Class IRI="#Publisher"/>
-        <NamedIndividual IRI="#nhanam"/>
-    </ClassAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#publisherHasName"/>
-        <NamedIndividual IRI="#nhanam"/>
-        <Literal datatypeIRI="&xsd;string">Nhã Nam</Literal>
-    </DataPropertyAssertion>
-        
-    <Declaration>
-        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
-    </Declaration>
-            
-    <ClassAssertion>
-        <Class IRI="#Children"/>
-        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
-    </ClassAssertion>
-            
-
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasAuthor"/>
-        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
-        <NamedIndividual IRI="#nguyennhatanh"/>
-    </ObjectPropertyAssertion>
-
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasLanguage"/>
-        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
-        <NamedIndividual IRI="#Vietnamese"/>
-    </ObjectPropertyAssertion>
-
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasPublisher"/>
-        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
-        <NamedIndividual IRI="#kimdong"/>
-    </ObjectPropertyAssertion>
-
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasExtension"/>
-        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
-        <Literal datatypeIRI="&rdf;PlainLiteral">pdf</Literal>
-    </DataPropertyAssertion>
-    
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasID"/>
-        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
-        <Literal datatypeIRI="&xsd;int">12</Literal>
-    </DataPropertyAssertion>
-
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasNumberPage"/>
-        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
-        <Literal datatypeIRI="&xsd;int">300</Literal>
-    </DataPropertyAssertion>
-
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasPublishYear"/>
-        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
-        <Literal datatypeIRI="&xsd;int">2015</Literal>
-    </DataPropertyAssertion>
-
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasSize"/>
-        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
-        <Literal datatypeIRI="&xsd;string">30MB</Literal>
-    </DataPropertyAssertion>
-    
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasTittle"/>
-        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
-        <Literal datatypeIRI="&xsd;string">Tôi thấy hoa vàng trên cỏ xanh</Literal>
-    </DataPropertyAssertion>
-
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasTag"/>
-        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
-        <Literal datatypeIRI="&xsd;string">Top 100 books</Literal>
-    </DataPropertyAssertion>
-        
-    <Declaration>
-        <NamedIndividual IRI="#trangti"/>
-    </Declaration>
-            
-    <ClassAssertion>
-        <Class IRI="#Fantasy"/>
-        <NamedIndividual IRI="#trangti"/>
-    </ClassAssertion>
-            
-
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasAuthor"/>
-        <NamedIndividual IRI="#trangti"/>
-        <NamedIndividual IRI="#phangianhatlinh"/>
-    </ObjectPropertyAssertion>
-
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasLanguage"/>
-        <NamedIndividual IRI="#trangti"/>
-        <NamedIndividual IRI="#English"/>
-    </ObjectPropertyAssertion>
-
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasPublisher"/>
-        <NamedIndividual IRI="#trangti"/>
-        <NamedIndividual IRI="#kimdong"/>
-    </ObjectPropertyAssertion>
-
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasExtension"/>
-        <NamedIndividual IRI="#trangti"/>
-        <Literal datatypeIRI="&rdf;PlainLiteral">pdf</Literal>
-    </DataPropertyAssertion>
-    
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasID"/>
-        <NamedIndividual IRI="#trangti"/>
-        <Literal datatypeIRI="&xsd;int">11</Literal>
-    </DataPropertyAssertion>
-
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasNumberPage"/>
-        <NamedIndividual IRI="#trangti"/>
-        <Literal datatypeIRI="&xsd;int">250</Literal>
-    </DataPropertyAssertion>
-
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasPublishYear"/>
-        <NamedIndividual IRI="#trangti"/>
-        <Literal datatypeIRI="&xsd;int">2020</Literal>
-    </DataPropertyAssertion>
-
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasSize"/>
-        <NamedIndividual IRI="#trangti"/>
-        <Literal datatypeIRI="&xsd;string">20MB</Literal>
-    </DataPropertyAssertion>
-    
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasTittle"/>
-        <NamedIndividual IRI="#trangti"/>
-        <Literal datatypeIRI="&xsd;string">Trạng Tí</Literal>
-    </DataPropertyAssertion>
-
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasTag"/>
-        <NamedIndividual IRI="#trangti"/>
-        <Literal datatypeIRI="&xsd;string">Top 100 books</Literal>
-    </DataPropertyAssertion>
-        
-    <Declaration>
-        <NamedIndividual IRI="#trangtest"/>
-    </Declaration>
-            
-    <ClassAssertion>
-        <Class IRI="#Fantasy"/>
-        <NamedIndividual IRI="#trangtest"/>
-    </ClassAssertion>
-            
-
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasAuthor"/>
-        <NamedIndividual IRI="#trangtest"/>
-        <NamedIndividual IRI="#phangianhatlinh"/>
-    </ObjectPropertyAssertion>
-
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasLanguage"/>
-        <NamedIndividual IRI="#trangtest"/>
-        <NamedIndividual IRI="#English"/>
-    </ObjectPropertyAssertion>
-
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasPublisher"/>
-        <NamedIndividual IRI="#trangtest"/>
-        <NamedIndividual IRI="#nhanam"/>
-    </ObjectPropertyAssertion>
-
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasExtension"/>
-        <NamedIndividual IRI="#trangtest"/>
-        <Literal datatypeIRI="&rdf;PlainLiteral">pdf</Literal>
-    </DataPropertyAssertion>
-    
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasID"/>
-        <NamedIndividual IRI="#trangtest"/>
-        <Literal datatypeIRI="&xsd;int">10</Literal>
-    </DataPropertyAssertion>
-
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasNumberPage"/>
-        <NamedIndividual IRI="#trangtest"/>
-        <Literal datatypeIRI="&xsd;int">250</Literal>
-    </DataPropertyAssertion>
-
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasPublishYear"/>
-        <NamedIndividual IRI="#trangtest"/>
-        <Literal datatypeIRI="&xsd;int">2020</Literal>
-    </DataPropertyAssertion>
-
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasSize"/>
-        <NamedIndividual IRI="#trangtest"/>
-        <Literal datatypeIRI="&xsd;string">20MB</Literal>
-    </DataPropertyAssertion>
-    
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasTittle"/>
-        <NamedIndividual IRI="#trangtest"/>
-        <Literal datatypeIRI="&xsd;string">Trạng Test</Literal>
-    </DataPropertyAssertion>
-
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasTag"/>
-        <NamedIndividual IRI="#trangtest"/>
-        <Literal datatypeIRI="&xsd;string">Top 100 books</Literal>
-    </DataPropertyAssertion>
-        </Ontology>
+</Ontology>
 
 
 
