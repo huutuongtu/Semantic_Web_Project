@@ -159,7 +159,7 @@ for i in range(len(data)):
     </DataPropertyAssertion>
     
     <DataPropertyAssertion>
-        <DataProperty IRI="#hasTittle"/>
+        <DataProperty IRI="#hasTitle"/>
         <NamedIndividual IRI="#%s"/>
         <Literal datatypeIRI="&xsd;string">%s</Literal>
     </DataPropertyAssertion>
