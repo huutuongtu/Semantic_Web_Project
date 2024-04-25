@@ -44,21 +44,28 @@ query = """
     """
 print(list(default_world.sparql(base_query + query)))
 
-#query all data type book
+#query all data has type book
 query = """
-        SELECT ?item ?title ?author
+        SELECT ?book
             WHERE {
-            { 
-                ?item rdf:type :Book. 
-            }
-            UNION
-            { 
-                ?item rdf:type ?childClass .
+                ?book rdf:type ?childClass .
                 ?childClass rdfs:subClassOf* :Book .
-                ?item :hasAuthor ?author .
-                ?item :hasTitle ?title .
             }
+
+"""
+print(list(default_world.sparql(base_query + query)))
+
+
+#Query all book of author
+query = """
+        SELECT ?author ?book
+            WHERE {
+                ?author :hasName "Phan Gia Nhật Linh" .
+                ?book rdf:type ?childClass .
+                ?childClass rdfs:subClassOf* :Book .
+                ?book :hasAuthor ?author
             }
+
 """
 
 print(list(default_world.sparql(base_query + query)))
