@@ -18,13 +18,13 @@ query = """
            SELECT ?book ?title ?author
                 WHERE {
                         ?book rdf:type :Fantasy .
-                        ?book :hasAuthor ?author .
-                        ?book :hasTitle ?title .
+                        OPTIONAL {?book :hasAuthor ?author}
+                        OPTIONAL {?book :hasTitle ?title}
                         }
     """
 print(list(default_world.sparql(base_query + query)))
 
-#this will return only item type Book not contain item subclass of Book (not like reason).
+#this will return only item type Book not contain item subclass of Book (not like reasoning).
 query = """
            SELECT ?book
                 WHERE {
@@ -33,7 +33,7 @@ query = """
     """
 print(list(default_world.sparql(base_query + query)))
 
-#this will return nothing => chuatenhungchiecnhan doesn't have author and title !?!
+#this will return nothing => chuatenhungchiecnhan doesn't have author and title => need add optional like first query
 query = """
            SELECT ?book ?title ?author
                 WHERE {
@@ -56,7 +56,8 @@ query = """
 print(list(default_world.sparql(base_query + query)))
 
 
-#Query all book of author
+#Query all book of a author
+
 query = """
         SELECT ?author ?book
             WHERE {
@@ -64,6 +65,27 @@ query = """
                 ?book rdf:type ?childClass .
                 ?childClass rdfs:subClassOf* :Book .
                 ?book :hasAuthor ?author
+            }
+
+"""
+
+print(list(default_world.sparql(base_query + query)))
+
+
+
+#Query all books belong to a publisher with infomation (author and description), if a book not have description => return None in hasDescription
+
+query = """
+        SELECT ?title ?name_author ?description
+            WHERE {
+                ?publisher :publisherHasName "Kim Đồng" .
+                ?book rdf:type ?childClass .
+                ?childClass rdfs:subClassOf* :Book .
+                ?book :hasPublisher ?publisher
+                ?book :hasTitle ?title .
+                ?book :hasAuthor ?author .
+                ?author :hasName ?name_author
+                OPTIONAL {?book :hasDescription ?description}
             }
 
 """

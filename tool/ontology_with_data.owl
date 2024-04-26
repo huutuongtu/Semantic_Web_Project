@@ -384,6 +384,11 @@
         <Literal datatypeIRI="&xsd;string">Phan Gia Nhật Linh</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
+        <DataProperty IRI="#hasDescription"/>
+        <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">truyện không hay</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
         <DataProperty IRI="#hasExtension"/>
         <NamedIndividual IRI="#toithayhoavangtrencoxanh"/>
         <Literal datatypeIRI="&rdf;PlainLiteral">pdf</Literal>
