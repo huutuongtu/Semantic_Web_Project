@@ -59,10 +59,12 @@ print(list(default_world.sparql(base_query + query)))
 #Query all book of a author
 
 query = """
-        SELECT ?author ?book
+        SELECT ?nameauthor ?namebook
             WHERE {
-                ?author :hasName "Phan Gia Nhật Linh" .
+                ?author :hasName "Kameron Hussain" .
                 ?book rdf:type ?childClass .
+                ?book :hasTitle ?namebook
+                ?author :hasName ?nameauthor
                 ?childClass rdfs:subClassOf* :Book .
                 ?book :hasAuthor ?author
             }
@@ -78,7 +80,7 @@ print(list(default_world.sparql(base_query + query)))
 query = """
         SELECT ?title ?name_author ?description
             WHERE {
-                ?publisher :publisherHasName "Kim Đồng" .
+                ?publisher :publisherHasName "ACT" .
                 ?book rdf:type ?childClass .
                 ?childClass rdfs:subClassOf* :Book .
                 ?book :hasPublisher ?publisher

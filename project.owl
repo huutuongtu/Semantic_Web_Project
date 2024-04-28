@@ -31,6 +31,9 @@
         <Class IRI="#Book"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Business"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Children"/>
     </Declaration>
     <Declaration>
@@ -49,6 +52,9 @@
         <Class IRI="#Diabetes"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Economy"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Fantasy"/>
     </Declaration>
     <Declaration>
@@ -61,7 +67,13 @@
         <Class IRI="#LoveErotic"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Management"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Math"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MathematicalEconomics"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Medicine"/>
@@ -76,7 +88,10 @@
         <Class IRI="#Pharmacology"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Probality"/>
+        <Class IRI="#PopularScientificLiterature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Probability"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Programming"/>
@@ -92,6 +107,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Therapy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Trading"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasAuthor"/>
@@ -146,6 +164,10 @@
         <Class IRI="#Math"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Business"/>
+        <Class IRI="#Book"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Children"/>
         <Class IRI="#Literature"/>
     </SubClassOf>
@@ -170,6 +192,10 @@
         <Class IRI="#Medicine"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Economy"/>
+        <Class IRI="#Book"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Fantasy"/>
         <Class IRI="#Literature"/>
     </SubClassOf>
@@ -182,8 +208,16 @@
         <Class IRI="#Psychology"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Management"/>
+        <Class IRI="#Business"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Math"/>
         <Class IRI="#Book"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MathematicalEconomics"/>
+        <Class IRI="#Economy"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Medicine"/>
@@ -202,7 +236,11 @@
         <Class IRI="#Medicine"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Probality"/>
+        <Class IRI="#PopularScientificLiterature"/>
+        <Class IRI="#Medicine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Probability"/>
         <Class IRI="#Math"/>
     </SubClassOf>
     <SubClassOf>
@@ -220,6 +258,10 @@
     <SubClassOf>
         <Class IRI="#Therapy"/>
         <Class IRI="#Medicine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trading"/>
+        <Class IRI="#Business"/>
     </SubClassOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasAuthor"/>
