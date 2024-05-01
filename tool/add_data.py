@@ -14,7 +14,7 @@ for i in range(len(data)):
     # if type(data['hasAuthor'][i])==str:
     #     list_author = list(data['hasAuthor'][i])
     # else:
-    list_author = ast.literal_eval(data['hasAuthor'][i])
+    list_author = ast.literal_eval(data['hasAuthor'][i])[0].split(",")
     # print(list_author)
     hasPublisher[get_individual_from_title(data['hasPublisher'][i])] = False
     for author in list_author:
@@ -34,7 +34,7 @@ for i in range(len(data)):
     # if type(data['hasAuthor'][i])==str:
     #     list_author = list(data['hasAuthor'][i])
     # else:
-    list_author = ast.literal_eval(data['hasAuthor'][i])
+    list_author = ast.literal_eval(data['hasAuthor'][i])[0].split(",")
     for nameAuthorIndividual in list_author:
         nameAuthorIndividual = nameAuthorIndividual
         authorIndividual = get_individual_from_title(nameAuthorIndividual)
@@ -194,7 +194,7 @@ for i in range(len(data)):
     # if type(data['hasAuthor'][i])==str:
     #     list_author = list(data['hasAuthor'][i])
     # else:
-    list_author = ast.literal_eval(data['hasAuthor'][i])
+    list_author = ast.literal_eval(data['hasAuthor'][i])[0].split(",")
     for bookAuthorIndivdual in list_author:
         bookAuthor = get_individual_from_title(bookAuthorIndivdual)
         # print(bookAuthor)

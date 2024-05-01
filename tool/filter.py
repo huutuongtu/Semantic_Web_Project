@@ -1,25 +1,31 @@
 import pandas as pd
 from utils import get_individual_from_title
 import ast
-
 data = pd.read_csv("./data.csv")
-
-author_book = {}
-set_author = []
-for i in range(len(data)):
-    xyz = data['hasAuthor'][i]
-    for author in ast.literal_eval(xyz):
-        set_author.append(author)
-        author_book[author]=0
+classes = []
 
 for i in range(len(data)):
-    xyz = data['hasAuthor'][i]
-    for author in ast.literal_eval(xyz):
-        author_book[author]+=1
+    classes.append(data["hasCategory"][i])
+classes = list(set(classes))
 
-for i in range(len(data)):
-    xyz = data['hasAuthor'][i]
-    for author in ast.literal_eval(xyz):
-        if author_book[author]>5:
-            print(author)
-            print(author_book[author])
+mapping_category = {}
+for classs in classes:
+    mapping_category[classs] = classs
+mapping_category['Optimization. Operations Research'] = 'Optimization'
+mapping_category ['Popular scientific literature'] = 'PopularScientificLiterature'
+mapping_category['Operating Systems'] = 'OperatingSystem'
+mapping_category['Mathematical Economics'] = 'MathematicalEconomics'
+mapping_category['Love, erotic'] = 'LoveErotic'
+mapping_category['Databases'] = 'Database'
+mapping_category['Creative Thinking'] = 'CreativeThink'
+
+
+def category_mapping():
+    return mapping_category
+
+
+#2 language russian, english
+# special &
+# language Russian (Old) ??!
+# Spanish; Quechua 
+# Рецепт хорошего сна.

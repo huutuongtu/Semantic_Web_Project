@@ -95,3 +95,18 @@ query = """
 print(list(default_world.sparql(base_query + query)))
 
  
+
+query = """
+        SELECT ?bookname ?bookauthor ?bookpublisher
+            WHERE {
+                ?book rdf:type ?childClass .
+                ?childClass rdfs:subClassOf* :Business .
+                ?book :hasTitle ?bookname .
+                ?book :hasAuthor ?author .
+                ?author :hasName ?bookauthor .
+                ?book :hasPublisher ?publisher .
+                ?publisher :publisherHasName ?bookpublisher .
+            }
+
+"""
+print(list(default_world.sparql(base_query + query)))
