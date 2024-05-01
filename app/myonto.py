@@ -44,7 +44,6 @@ class ReusableForm(Form):
 
             if(request.form['but1']=='Business'):
                 no_query = True
-                #car price mpg year seat
                 query = """
                     SELECT ?bookname ?bookauthor ?bookpublisher
                         WHERE {
@@ -176,32 +175,16 @@ class ReusableForm(Form):
                 if anything == "":
                     data = []
                 else:
-                    book_from_category = get_book_from_category(anything)
-                    author_from_book = get_author_from_book(anything)
-                    book_from_author = get_book_from_author(anything)
-                    book_from_publisher = get_book_from_publisher(anything)
-                    # print(book_from_category)
-                    try:
-                        print(1)
-                        print(book_from_category)
-                        data = list(default_world.sparql(base_query + book_from_category))
-                    except:
-                        try:
-                            print(2)
-                            print(book_from_author)
-                            data = list(default_world.sparql(base_query + book_from_author))
-                        except:
-                            try:
-                                print(3)
-                                print(author_from_book)
-                                data = list(default_world.sparql(base_query + author_from_book))
-                            except:
-                                try:
-                                    print(4) 
-                                    data = list(default_world.sparql(base_query + book_from_publisher))
-                                except:
-                                    print("dkm")  
-            
+                    data = []
+                    #get_book_from_category and get_author_from_book work, need fix 2 left
+                    if get_book_from_category(anything):
+                        data.extend(list(default_world.sparql(base_query + get_book_from_category(anything))))
+                    data.extend(list(default_world.sparql(base_query + get_author_from_book(anything))))
+                    # print(data)
+                    data.append(list(default_world.sparql(base_query + get_book_from_author(anything))))
+                    data.append(list(default_world.sparql(base_query + get_book_from_publisher(anything))))
+
+                    
             cols = ["Book", "Author", "Publisher"]
             if no_query is False:
                 if data is None:
@@ -217,9 +200,7 @@ class ReusableForm(Form):
             output = {'columns': cols,
                       'data': data}
             flash('Results ready!')
-        # except pyparsing.ParseException:
-        #     print("ERROR: query entered...\n", query)
-        #     flash('Error: Invald Query')
+
 
         return render_template('home.html', form=form, title="Book Search", output=output)
 

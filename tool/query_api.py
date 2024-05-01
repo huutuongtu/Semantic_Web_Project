@@ -80,15 +80,16 @@ def get_book_from_publisher(publisher: str):
 
 
 query = base_query + """
-            SELECT ?booktitle ?bookauthor ?bookpublisher
+            SELECT  ?title ?author ?publisher
                     WHERE {
-                            ?author :hasName "Александр Волков" .
-                            OPTIONAL {?author :isAuthorOf ?book} .
-                            OPTIONAL {?book :hasTitle ?booktitle} .
-                            OPTIONAL {?author :hasName ?bookauthor} .
-                            OPTIONAL {?book :hasPublisher ?publisher_individual} .
-                            OPTIONAL {?publisher_individual :publisherHasName ?publisher} .
+                            ?individual_publisher :publisherHasName "Routledge" .
+                            ?individual_publisher :publisherHasName ?publisher .
+                            OPTIONAL {?individual_publisher :isPublisherOf ?inbook}
+                            OPTIONAL {?inbook :hasAuthor ?author_individual}
+                            OPTIONAL {?author_individual :hasName ?author}
+                            OPTIONAL {?inbook :hasTitle ?title}
                             }
+
                             """
 
 print(list(default_world.sparql_query(query)))
