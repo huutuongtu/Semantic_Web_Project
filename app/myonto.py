@@ -176,24 +176,25 @@ class ReusableForm(Form):
                     data = []
                 else:
                     data = []
+                    data.extend(list(default_world.sparql(base_query + get_book_from_author(anything))))
+                    data.extend(list(default_world.sparql(base_query + get_book_from_publisher(anything))))
                     #get_book_from_category and get_author_from_book work, need fix 2 left
                     if get_book_from_category(anything):
                         data.extend(list(default_world.sparql(base_query + get_book_from_category(anything))))
                     data.extend(list(default_world.sparql(base_query + get_author_from_book(anything))))
                     # print(data)
-                    data.append(list(default_world.sparql(base_query + get_book_from_author(anything))))
-                    data.append(list(default_world.sparql(base_query + get_book_from_publisher(anything))))
+
 
                     
             cols = ["Book", "Author", "Publisher"]
             if no_query is False:
                 if data is None:
                     data = ["", "", ""]
-                print(data)
+                # print(data)
             else:
                 query = base_query + query
                 data = list(default_world.sparql(base_query + query))
-                print(data)
+                # print(data)
 
                     
 
@@ -208,4 +209,4 @@ class ReusableForm(Form):
 if __name__ == "__main__":
 
     go = get_ontology("./misc/ontology_with_data.owl").load()
-    app.run(debug=True)
+    app.run(port=9000,debug=True)

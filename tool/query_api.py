@@ -79,15 +79,21 @@ def get_book_from_publisher(publisher: str):
 # print(get_book_from_publisher("4th Estate AU"))
 
 
-query = base_query + """
-            SELECT  ?title ?author ?publisher
+query = """
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX owl: <http://www.w3.org/2002/07/owl#>
+        PREFIX : <http://www.semanticweb.org/huutuongtu/ontologies/2024/3/untitled-ontology-15#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+                SELECT ?booktitle ?bookauthor ?bookpublisher
                     WHERE {
-                            ?individual_publisher :publisherHasName "Routledge" .
-                            ?individual_publisher :publisherHasName ?publisher .
-                            OPTIONAL {?individual_publisher :isPublisherOf ?inbook}
-                            OPTIONAL {?inbook :hasAuthor ?author_individual}
-                            OPTIONAL {?author_individual :hasName ?author}
-                            OPTIONAL {?inbook :hasTitle ?title}
+                            ?author :hasName "Michel Broué" .
+                            ?author :isAuthorOf ?book .
+                            ?book :hasTitle ?booktitle .
+                            ?author :hasName ?bookauthor .
+                            ?book :hasPublisher ?publisher_individual .
+                            ?publisher_individual :publisherHasName ?bookpublisher .
                             }
 
                             """
