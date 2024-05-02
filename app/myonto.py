@@ -3,7 +3,7 @@
 
 import os
 import sys
-
+import itertools
 from jiwer import cer
 import pyparsing
 import rdflib
@@ -17,13 +17,11 @@ from owlready2 import *
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
 global no_query
-no_query = True
 global anything
 
 
 class ReusableForm(Form):
     query = StringField('Query:', validators=[validators.data_required()])
-    query_category = False
     @app.route("/", methods=['GET', 'POST'])
     def hello():
         global graph
@@ -175,22 +173,25 @@ class ReusableForm(Form):
                 if anything == "":
                     data = []
                 else:
+                    # print("vao ham")
                     data = []
-                    data.extend(list(default_world.sparql(base_query + get_book_from_author(anything))))
-                    data.extend(list(default_world.sparql(base_query + get_book_from_publisher(anything))))
-                    #get_book_from_category and get_author_from_book work, need fix 2 left
+                    data.extend(get_book_from_author(str(anything)))
+                    data.extend(get_book_from_publisher(str(anything)))
+                    # #get_book_from_category and get_author_from_book work, need fix 2 left
                     if get_book_from_category(anything):
-                        data.extend(list(default_world.sparql(base_query + get_book_from_category(anything))))
-                    data.extend(list(default_world.sparql(base_query + get_author_from_book(anything))))
-                    # print(data)
-
+                        data.extend(get_book_from_category(anything))
+                    data.extend(get_author_from_book(anything))
+                    data.sort()
+                    data = list(k for k,_ in itertools.groupby(data))
+                    # print(set(data))
+                    # data = list(set(data))
+                    
 
                     
             cols = ["Book", "Author", "Publisher"]
             if no_query is False:
-                if data is None:
+                if data==[]:
                     data = ["", "", ""]
-                # print(data)
             else:
                 query = base_query + query
                 data = list(default_world.sparql(base_query + query))
@@ -208,5 +209,4 @@ class ReusableForm(Form):
 
 if __name__ == "__main__":
 
-    go = get_ontology("./misc/ontology_with_data.owl").load()
     app.run(port=9000,debug=True)
