@@ -104,29 +104,55 @@ def get_book_from_author(author: str):
     return list(default_world.sparql(base_query + query))
 
 
-# def get_book_from_pre_infomation(infomation: dict):
-#     """This return list author individual and author name isAuthorOf Book
-#     """
-#     language = infomation['language']
-#     title = infomation['title']
-#     pages = infomation['pages']
-#     category = infomation['category']
-#     author = infomation['author']
-#     bookTitle = remove_special_chars_keep_punct_space(bookTitle)
-#     query = """
+def get_book_from_pre_infomation(infomation: dict):
+    try:
+        res = []
+        query = """
 
-# SELECT ?booktitle ?author ?publisher
-#         WHERE {
-#                 ?book :hasTitle "%s" .
-#                 OPTIONAL {?book :hasAuthor ?author_individual} .
-#                 OPTIONAL {?author_individual :hasName ?author} .
-#                 OPTIONAL {?book :hasTitle ?booktitle} .
-#                 OPTIONAL {?book :hasPublisher ?publisherin} .
-#                 OPTIONAL {?publisherin :publisherHasName ?publisher} .
-#                 }
-#         """ % (str(bookTitle))
-#     return query
-
+    SELECT ?booktitle ?author ?publisher ?numberpage
+            WHERE { \n
+        """
+        if infomation['title']:
+            bookTitle = remove_special_chars_keep_punct_space(infomation['title'])
+            query += '''?book :hasTitle "%s" \n
+            ''' %(str(bookTitle))
+        if infomation['category']:
+            category = infomation['category']
+            if category in category_mapping().keys():
+                query += '''?book rdf:type :%s \n
+                ''' %(str(category))
+        if infomation['author']:
+            author = infomation['author']
+            query += '''?entity_author :hasName "%s" .
+            ''' %(str(author))
+        if infomation['language']:
+            language = infomation['language']
+            query += '''?book :hasLanguage :%s \n
+            ''' %(str(language))
+        if infomation['pages']:
+            pages = infomation['pages']
+        
+            
+        query += '?book :hasTitle ?booktitle \n'
+        query += '?book :hasAuthor ?entity_author \n'
+        query += '?book :hasPublisher ?entity_publisher \n'
+        query += '?entity_author :hasName ?author \n'
+        query += '?entity_publisher :publisherHasName ?publisher \n'
+        query += '''?book :hasNumberPage ?numberpage .                
+            }
+                
+            '''
+        all_individual = list(default_world.sparql(base_query + query))
+        for individual in all_individual:
+            if pages-20 <= individual[3] <= pages+20:
+                res.append(individual)
+        return res
+    except:
+        return []
+    
+#keys should be False if no data
+info = {"category": "Fantasy", "pages": 300, "language": 'English', "author": 'Stephanie Garber', "title": False}
+print(get_book_from_pre_infomation(info))
 
 
 
