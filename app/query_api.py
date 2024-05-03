@@ -151,8 +151,8 @@ def get_book_from_pre_infomation(infomation: dict):
         return []
     
 #keys should be False if no data
-info = {"category": "Fantasy", "pages": 300, "language": 'English', "author": 'Stephanie Garber', "title": False}
-print(get_book_from_pre_infomation(info))
+# info = {"category": "Fantasy", "pages": 300, "language": 'English', "author": 'Stephanie Garber', "title": False}
+# print(get_book_from_pre_infomation(info))
 
 
 
